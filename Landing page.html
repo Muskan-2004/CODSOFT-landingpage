@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petals of Love - Indian Wedding Florist</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #b1acb0;
+            color: #5e2d40;
+            line-height: 1.6;
+            background-image: url('/image.png');
+
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid #d46a8e;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #7a1f48;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #9e3b6a;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #d46a8e;
+            padding: 15px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #9e3b6a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: url('/image\ copy\ 2.png');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(122, 31, 72, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff6b8b;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            background-color: #d46a8e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background-color: rgba(132, 74, 111, 0.503);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about h2 {
+            color: #7a1f48;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        
+        .about p {
+            margin-bottom: 15px;
+        }
+        
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.8rem;
+            color: #d46a8e;
+            margin-top: 20px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 60px 0;
+            background-color: #c20da3;
+            background-image: url("/image\ copy\ 9.png");
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #7a1f48;
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #ff6b8b;
+            margin: 15px auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #e482a3f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border: 1px solid #fad0c4;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: #9e3b6a;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        /* Resources Section */
+        .resources {
+            padding: 60px 0;
+            background-color: #fbf8fa;
+            background-image: url("/image\ copy\ 10.png");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #ff6b8b;
+        }
+        
+        .resource-card h3 {
+            color: #7a1f48;
+            margin-bottom: 15px;
+        }
+        
+        .resource-card p {
+            margin-bottom: 15px;
+        }
+        
+        .resource-link {
+            color: #ff6b8b;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #d85f95d4;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: #fad0c4;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #fff5f7;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #ff9a9e;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        .copyright {
+            border-top: 1px solid #9e3b6a;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Indian Elements */
+        .diya {
+            position: absolute;
+            width: 500px;
+            height: 100px;
+            background-image: url('/image_copy-removebg-preview.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 1;
+        }
+        
+        .diya-1 {
+            top: 20px;
+            left: 10%;
+        }
+        
+       
+        
+        .henna-pattern {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('/image\ copy\ 3.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .henna-1 {
+            top: 50%;
+            left: 5%;
+        }
+        
+        .henna-2 {
+            bottom: 10%;
+            right: 5%;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="diya diya-1"></div>
+        <div class="container header-content">
+            <h1>Petals of Love</h1>
+            <p class="tagline">Blossoming Traditions for Your Special Day</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="henna-pattern henna-1"></div>
+        <div class="henna-pattern henna-2"></div>
+        <div class="hero-content">
+            <h2>Exquisite Floral Arrangements for Indian Weddings</h2>
+            <p>Creating magical moments with the perfect blend of traditional Indian florals and contemporary designs</p>
+            <a href="#contact" class="btn">Book a Consultation</a>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2010, Petals of Love began as a small flower shop in Mumbai with a passion for bringing traditional Indian floral artistry to modern weddings. Our founder, Priya Sharma, combined her family's generations of floral expertise with contemporary design sensibilities to create something truly special.</p>
+                    <p>Today, we're proud to be one of India's most sought-after wedding florists, having decorated over 500 weddings across the country. Our team of skilled artisans handcraft each arrangement with meticulous attention to detail, ensuring your wedding flowers are as unique as your love story.</p>
+                    <p>We specialize in blending traditional Indian flowers like marigolds and jasmine with exotic blooms to create stunning arrangements that honor your heritage while reflecting your personal style.</p>
+                    <div class="signature">Priya Sharma</div>
+                </div>
+                <div class="about-image">
+                    <img src="/image copy 4.png" alt="Founder of Petals of Love">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/image copy 5.png" alt="Mandap Decoration">
+                    </div>
+                    <div class="service-content">
+                        <h3>Mandap Decorations</h3>
+                        <p>Transform your mandap into a floral paradise with our exquisite designs featuring marigolds, roses, and jasmine.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/image copy 6.png" alt="Bridal Bouquets">
+                    </div>
+                    <div class="service-content">
+                        <h3>Bridal Bouquets</h3>
+                        <p>Custom-designed bouquets that complement your bridal look, using fresh seasonal flowers.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/image copy 7.png" alt="Venue Decor">
+                    </div>
+                    <div class="service-content">
+                        <h3>Venue Decor</h3>
+                        <p>Complete floral transformations for your wedding venue, from entrance to stage.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/image copy 8.png" alt="Traditional Torans">
+                    </div>
+                    <div class="service-content">
+                        <h3>Traditional Torans</h3>
+                        <p>Beautiful floral door hangings to welcome guests with traditional Indian charm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2 class="section-title">Wedding Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Flower Care Guide</h3>
+                    <p>Learn how to keep your wedding flowers fresh and vibrant throughout your celebrations.</p>
+                    <a href="#" class="resource-link">Download Guide →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Seasonal Flower Calendar</h3>
+                    <p>Plan your wedding flowers according to seasonal availability and best prices.</p>
+                    <a href="#" class="resource-link">View Calendar →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Traditional Flower Meanings</h3>
+                    <p>Discover the cultural significance of different flowers in Indian weddings.</p>
+                    <a href="#" class="resource-link">Read More →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Budget Calculator</h3>
+                    <p>Estimate your floral budget based on your wedding size and preferences.</p>
+                    <a href="#" class="resource-link">Try Calculator →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Color Palette Ideas</h3>
+                    <p>Get inspired with beautiful color combinations for your wedding flowers.</p>
+                    <a href="#" class="resource-link">Explore Ideas →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@petalsoflove.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Address: 123 Floral Street, Mumbai</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#resources">Resources</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#">📱</a>
+                        <a href="#">📸</a>
+                        <a href="#">💻</a>
+                        <a href="#">📌</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Petals of Love. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
